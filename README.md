@@ -49,7 +49,7 @@ This project uses a `.env` file to store sensitive configuration data such as AP
 
 ### Example `.env` File
 
-```dotenv
+dotenv
 # Flask Configuration
 SECRET_KEY=your_flask_secret_key
 FLASK_ENV=development
@@ -60,39 +60,33 @@ AZURE_DEVOPS_PROJECT=your_azure_devops_project_name
 AZURE_DEVOPS_PAT=your_azure_devops_personal_access_token
 
 # OpenAI Configuration
-OPENAI_API_KEY=your_openai_api_key
-Installation
+OPENAI_API_KEY=your_openai_api_key'
+
+### Installation
 Clone the Repository:
 
-bash
-Copy
 git clone https://github.com/yourusername/backlog-excellence-chatbot.git
 cd backlog-excellence-chatbot
 Create and Activate a Virtual Environment:
 
-bash
-Copy
 python -m venv venv
 source venv/bin/activate    # For macOS/Linux
 .\venv\Scripts\activate     # For Windows
 Install the Dependencies:
 
-bash
-Copy
 pip install -r requirements.txt
-Execution Procedure
+
+### Execution Procedure
 Prepare Your Environment:
 Ensure your .env file (as described above) is present in the project root.
 
 Run the Application:
 
-bash
-Copy
 python app.py
 Access the Application:
 Open your browser and navigate to http://127.0.0.1:5000/.
 
-Usage
+### Usage
 User Authentication:
 Register a new account and then log in.
 
@@ -121,16 +115,15 @@ list all tasks or show my tasks will retrieve tasks.
 Chat History:
 Use the "Delete Chat History" button in the interface to clear your past conversation.
 
-Configuration
+### Configuration
 Azure DevOps:
 Configure your organization URL, project name, and PAT in the .env file or directly in azure_devops.py if needed.
 
 OpenAI:
 Set your API key in the .env file. The file is automatically loaded by the application using python-dotenv.
 
-Project Structure
-graphql
-Copy
+### Project Structure
+
 backlog-excellence-chatbot/
 ├── app.py               # Main Flask application
 ├── azure_devops.py      # Azure DevOps API integration functions
@@ -146,16 +139,12 @@ backlog-excellence-chatbot/
 └── static/
     ├── styles.css       # CSS styles
     └── logo.png         # Project logo
-Contributing
+### Contributing
 If you’d like to contribute to this project, please fork the repository and submit a pull request. For major changes, please open an issue first to discuss what you would like to change.
 
-License
+### License
 This project is licensed under the MIT License.
 
-yaml
-Copy
-
----
 
 ### Final Note
 
