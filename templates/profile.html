@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="profile-container">
+  <h2>Profile Settings</h2>
+  <form method="POST">
+    <div class="form-group">
+      <label>Azure DevOps Email:</label>
+      <input type="text" name="azure_email" value="{{ current_user.azure_devops_email }}" placeholder="Display Name <email@domain.com>">
+      <small>Format: "Your Name <your.email@domain.com>"</small>
+    </div>
+    <button type="submit">Update Profile</button>
+  </form>
+</div>
+{% endblock %}

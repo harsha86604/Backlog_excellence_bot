@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="chat-container">
+  <h2>Backlog Assistant Chat</h2>
+  <div class="chat-history" id="chatHistory">
+    {% for message in history %}
+      <div class="message message-{{ message.type }}">{{ message.text|safe }}</div>
+    {% endfor %}
+  </div>
+  <form id="chatForm">
+    <div class="form-group">
+      <input type="text" name="message" id="messageInput" placeholder="Ask about tasks, progress, or create work items..." required>
+      <button type="submit">Send</button>
+    </div>
+  </form>
+  <button id="deleteHistory" class="delete-btn">Delete Chat History</button>
+</div>
+{% endblock %}
+{% block scripts %}
+<script>
+$(document).ready(function() {
+  $('#chatForm').on('submit', function(e) {
+    e.preventDefault();
+    const message = $('#messageInput').val();
+    const chatHistory = $('#chatHistory');
+    chatHistory.append(`<div class="message message-user">${message}</div>`);
+    $('#messageInput').val('');
+    chatHistory.scrollTop(chatHistory[0].scrollHeight);
+    $.ajax({
+      type: 'POST',
+      url: '/',
+      data: { message: message },
+      success: function(response) {
+        chatHistory.append(`<div class="message message-bot">${response.response}</div>`);
+        chatHistory.scrollTop(chatHistory[0].scrollHeight);
+      },
+      error: function() {
+        alert('Error communicating with server');
+      }
+    });
+  });
+  $('#deleteHistory').on('click', function() {
+    if(confirm("Are you sure you want to delete the chat history?")) {
+      $.ajax({
+        type: "POST",
+        url: "/delete_history",
+        success: function(response) {
+          location.reload();
+        },
+        error: function() { alert("Error deleting history."); }
+      });
+    }
+  });
+});
+</script>
+{% endblock %}

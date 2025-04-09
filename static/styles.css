@@ -1,0 +1,170 @@
+/* Basic Reset and Background */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f8fb;
+  color: #333;
+}
+
+/* Header with Logo and Campus Information */
+.header {
+  background: #005387; /* Deep blue */
+  color: #fff;
+  padding: 20px 20px;
+}
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+.logo {
+  max-height: 60px;
+  margin-right: 20px;
+}
+.header-text h1 {
+  margin: 0;
+  font-size: 24px;
+}
+.header-text p {
+  margin: 2px 0;
+  font-size: 14px;
+}
+
+/* Navigation Bar */
+.navbar {
+  background: #0073a9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 15px;
+  font-weight: bold;
+}
+.navbar a:hover {
+  text-decoration: underline;
+}
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+.user-info {
+  margin-right: 10px;
+}
+
+/* Main Content Container */
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Chat Container & Messages */
+.chat-container {
+  margin: 20px 0;
+}
+.chat-container h2 {
+  margin-bottom: 10px;
+  color: #005387;
+}
+.chat-history {
+  border: 1px solid #ddd;
+  padding: 10px;
+  height: 300px;
+  overflow-y: auto;
+  background: #eef4f8;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+.message {
+  margin: 10px 0;
+  padding: 8px;
+  border-radius: 4px;
+  max-width: 80%;
+}
+.message-user {
+  background: #d1e7ff;
+  align-self: flex-end;
+  text-align: right;
+}
+.message-bot {
+  background: #e6f0fa;
+  text-align: left;
+}
+
+/* Authentication & Profile Forms */
+.auth-form, .profile-container {
+  max-width: 400px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #f7fbfd;
+  border: 1px solid #dfe7ec;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.auth-form h2, .profile-container h2 {
+  text-align: center;
+  color: #005387;
+}
+.form-group {
+  margin-bottom: 15px;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #005387;
+}
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #dfe7ec;
+  border-radius: 4px;
+}
+button {
+  background: #0073a9;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 14px;
+}
+button:hover {
+  background: #005387;
+}
+
+/* Flash Messages */
+.flash-message {
+  background: #ffdddd;
+  border: 1px solid #ff5c5c;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+}
+
+/* Footer Styling */
+.footer {
+  text-align: center;
+  padding: 15px;
+  background: #0073a9;
+  color: #fff;
+  font-size: 12px;
+  margin-top: 20px;
+}
+
+/* Delete History Button */
+.delete-btn {
+  background: #d9534f;
+  margin-top: 10px;
+}
+.delete-btn:hover {
+  background: #c9302c;
+}
